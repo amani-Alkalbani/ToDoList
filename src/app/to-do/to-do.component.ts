@@ -2,6 +2,8 @@ import { Component,VERSION  } from '@angular/core';
 import { Task} from '../toDoModels/Todo';
 import { ServiceService } from '../service.service';
 import {FormControl ,FormGroup,  Validators, ValidationErrors, ValidatorFn ,FormBuilder} from '@angular/forms';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -43,7 +45,8 @@ export class ToDoComponent {
   //   this.inputTodo="";
   // }
 
-
+  faTrash=faTrash;
+  faPen=faPen;
   
   alphaNumberOnly (e:any) {  
     var regex = new RegExp("^[a-zA-Z0-9 ]+$");
@@ -74,6 +77,7 @@ export class ToDoComponent {
   get ToDoName(){
     return this.Todoform.get('ToDoName')
   }
+
   taskObj : Task = new Task();
   taskArr : Task[] = [];
 
